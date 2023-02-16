@@ -33,7 +33,7 @@ def index
   def show
     @image = Image.find(params[:id])
     # 参照先のS3オブジェクトURLを作成
-   @image_url = "https://img-files-resize-ex.s3-ap-northeast-1.amazonaws.com/store/#{@image.image.key}-thumbnail.#{@image.image.content_type.split('/').pop}"
+   @image_url = "https://img-files-resize-ex.s3-ap-northeast-1.amazonaws.com#{@image.image.key}-thumbnail.#{@image.image.content_type.split('/').pop}"
   end
 
   def destroy
